@@ -11,23 +11,27 @@ body {
     background-color: rgb(35, 41, 49);
     background-size: cover;
 }
-
+.main {
+    text-align: center;
+}
 ul.list {
     list-style-type: none;
     background: #fce77d;
+    border-radius: 8px;
     padding: 20px;
-    width: 200px;
-    max-width: 200px;
+    width: 300px;
+    max-width: 300px;
     list-style-position: outside;
-    position: relative;
 }
 
 .infoList {
     color: #0e5280;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: smaller;
-
+    font-weight: bolder;
+    font-size: 14px;
+    margin-left: 20px;
+    text-align: left;
+   
 }
 .img {
     display: block;
@@ -40,7 +44,9 @@ ul.list {
     margin-top: 20px;
     width: 50%;
 }
-
+.name {
+    color: #07283d;
+}
 .btn {
     background-color: #0e5280;
     border: none;
@@ -51,7 +57,8 @@ ul.list {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: .8px;
-    margin: 20px 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -61,13 +68,12 @@ ul.list {
     border-radius: 8px;
     color: #cbf5cc;
     padding: 10px;
-    text-align: center;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    display: inline-block;
     font-size: 12px;
     font-weight: 600;
-    margin: 10px 40px 30px 40px;
+    margin-top: 10px;
     cursor: pointer;
+}
+
+.hide {
+    display: none;
 }

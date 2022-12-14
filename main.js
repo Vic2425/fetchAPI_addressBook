@@ -18,39 +18,31 @@ function displayUser(user) {
        li.classList.add('infoList');
        const img = new Image();
        img.classList.add('img');
-       img.setAttribute('src', `${user.picture.large}\n`);
+       img.setAttribute('src', `${user.picture.large}`);
        const btn = document.createElement('button');
        btn.innerHTML = 'More Info';
        btn.classList.add('showMore');
-       li.appendChild(document.createTextNode(`${user.name.title}. ${user.name.first} ${user.name.last} `));
+       const userName = document.createTextNode(`
+       ${user.name.title}. ${user.name.first} ${user.name.last}
+       `);
+
        userLi.append(img);
-       userLi.append(li);
+       userLi.append(userName);
+       userLi.append(li)
        btn.addEventListener('click', () => {
-          li.appendChild(document.createTextNode(` Gender: ${user.gender}`))
-          li.appendChild(document.createTextNode(` E-mail: ${user.email}`))
-          li.appendChild(document.createTextNode(` From: ${user.location.country}`))
-            // if(li.style.display == 'none') {
-            //     li.style.display = 'block';
-            //     btn.innerHTML = 'Hide Info';
-            //   } else {
-            //     li.style.display == 'none';
-            //     btn.innerHTML = 'More Info';
-            //    }
-        })
+          const visible = li.classList.contains('show');
+          console.log(visible);
+          if(!visible) {
+            li.classList.add('show');
+          } else {
+            li.style.visibility = "hidden";
+          };
+          li.innerHTML = `
+          Gender: ${user.gender} <br>
+          E-mail: ${user.email} <br>
+          From: ${user.location.country}
+          `
+       })
        userLi.append(btn);
     })
 }
-
-
-
-
-// async function getUser() {
-//     const response = await fetch('https://randomuser.me/api/?result=25');
-//     const data = await response.json();
-//     const users = data.results;
-//     console.log(users);
-
-//     users.forEach(user => displayUser(user));
-//    //displayUser()
-// }
-
